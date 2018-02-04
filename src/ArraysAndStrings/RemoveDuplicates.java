@@ -24,6 +24,7 @@ public class RemoveDuplicates {
                 pos++;
             }
         }
+        // other languages have more elegant solutions for this
         char[] result = new char[pos];
         for (int i = 0; i < pos; i++){
             result[i] = output[i];
