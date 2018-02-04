@@ -6,6 +6,7 @@ public class ThreeStacksOnOneArray {
     }
     public static void stack1() throws Exception{
         ThreeStacksOnOneArray stack = new ThreeStacksOnOneArray(3);
+        System.out.println(stack.peek(0));
         stack.push(0, 1); stack.print();
         stack.push(0, 2); stack.print();
         stack.push(0, 3); stack.print();
@@ -32,6 +33,8 @@ public class ThreeStacksOnOneArray {
     public int peek(int n){
         // n * 3 + sizes[n]
         int index = (n*3) + sizes[n]-1;
+        if (index < 0)
+            return stacks[0];
         return stacks[index];
     }
     public int pop(int n){
