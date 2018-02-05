@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class TowersOfHanoi {
     public static void main(String[] args){
-        int size = 6;
+        int size = 4;
         TowersOfHanoi h = new TowersOfHanoi(size);
         printStacks(h.towers);
         h.moveDisks();
@@ -33,6 +33,9 @@ public class TowersOfHanoi {
         for(int i = 0; i < size; i ++){
             towers[0].disks.add(size - i);
         }
+        towers[0].name = "A";
+        towers[1].name = "B";
+        towers[2].name = "C";
     }
 
     public void moveDisks(){
@@ -43,6 +46,7 @@ public class TowersOfHanoi {
 
 class Tower{
     Stack<Integer> disks;
+    String name = "";
     int index;
     Tower(int index){
         this.disks = new Stack<>();
@@ -54,6 +58,7 @@ class Tower{
         }
     }
     public void moveToTop(Tower tower){
+        System.out.println("Move disk " + disks.peek() + " from " + name + " to " + tower.name);
         tower.add(disks.pop());
     }
     public void moveDisks(int n, Tower destination, Tower buffer){
