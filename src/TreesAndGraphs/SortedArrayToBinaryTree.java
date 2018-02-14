@@ -15,7 +15,7 @@ public class SortedArrayToBinaryTree {
         if (end < start)
             return null;
         int mid = (start + end) / 2;
-        Node node = new Node("" + items[mid]);
+        Node node = new Node("" + items[mid], null);
         node.left = addToTree(items, start, mid-1);
         node.right = addToTree(items, mid+1, end);
         return node;

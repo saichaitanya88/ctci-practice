@@ -5,4 +5,7 @@ public class BinarySearchTreeToLinkedLists {
 
     }
 
+    public static void levelTraverse(Node root){
+
+    }
 }
